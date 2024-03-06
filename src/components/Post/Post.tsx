@@ -132,7 +132,10 @@ export default function Post(): ReactElement {
             />
           </div>
           <div className="comment-form-actions">
-            <button type="submit" className={`${buttonClasses} bg-gray-400 hover:bg-gray-300`}>
+            <button
+              type="submit"
+              className={`${buttonClasses} bg-gray-400 hover:bg-gray-300`}
+            >
               Add Comment
             </button>
           </div>
@@ -172,13 +175,15 @@ export default function Post(): ReactElement {
                   <p className="line-clamp-1 md:line-clamp-3">
                     {comment.description}
                   </p>
-                  <button
-                    onClick={handleDelete}
-                    type="button"
-                    className="border-none rounded-[0.25rem] font-bold py-3 px-4 bloc no-underline text-xs [&:focus]:no-underline [&:hover]:outline-none [&:hover]:cursor-pointer bg-red-800 hover:bg-red-600 text-white w-[20%] md:w-1/4 self-end"
-                  >
-                    Delete!
-                  </button>
+                  {retrievedUser.id === Number(comment.userId) && (
+                    <button
+                      onClick={handleDelete}
+                      type="button"
+                      className="border-none rounded-[0.25rem] font-bold py-3 px-4 bloc no-underline text-xs [&:focus]:no-underline [&:hover]:outline-none [&:hover]:cursor-pointer bg-red-800 hover:bg-red-600 text-white w-[20%] md:w-1/4 self-end"
+                    >
+                      Delete!
+                    </button>
+                  )}
                 </li>
               </ul>
             );

@@ -56,13 +56,15 @@ export default function AllPosts({ posts }: { posts: Post[] }): ReactElement {
                   />
                 )}
               </div>
-              <button
-                type="button"
-                className="border-none rounded-[0.25rem] font-bold py-3 px-4 bloc no-underline text-xs [&:focus]:no-underline [&:hover]:outline-none [&:hover]:cursor-pointer bg-red-800 hover:bg-red-600 text-white w-[40%] md:w-1/4 self-end"
-                onClick={handleDelete}
-              >
-                Delete Post
-              </button>
+              {retrievedUser.username === post.username && (
+                <button
+                  type="button"
+                  className="border-none rounded-[0.25rem] font-bold py-3 px-4 bloc no-underline text-xs [&:focus]:no-underline [&:hover]:outline-none [&:hover]:cursor-pointer bg-red-800 hover:bg-red-600 text-white w-[40%] md:w-1/4 self-end"
+                  onClick={handleDelete}
+                >
+                  Delete Post
+                </button>
+              )}
               {posts.length - 1 !== index && (
                 <div className=" border-b border-lime-900 my-2" />
               )}
