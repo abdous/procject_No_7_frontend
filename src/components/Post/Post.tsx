@@ -107,7 +107,7 @@ export default function Post(): ReactElement {
 
   return (
     <div className="p-6  relative w-full md:left-[50%] md:-translate-x-1/2 md:translate-y-[20%] md:w-1/2">
-      <div className="max-w-[37.5rem] text-white bg-[#909090] rounded-[0.875rem] py-6 px-4">
+      <div className="max-w-[37.5rem] text-white bg-sky-900 rounded-[0.875rem] py-6 px-4">
         <h2 className="mb-3 flex flex-col">
           <p className="italic text-2xl self-center font-bold">
             Hey I am {post.username}
@@ -134,7 +134,7 @@ export default function Post(): ReactElement {
           <div className="comment-form-actions">
             <button
               type="submit"
-              className={`${buttonClasses} bg-gray-400 hover:bg-gray-300`}
+              className={`${buttonClasses} bg-black hover:bg-gray-500`}
             >
               Add Comment
             </button>
@@ -142,13 +142,13 @@ export default function Post(): ReactElement {
         </form>
         <button
           id="comment-reveal"
-          className={`bg-sky-900 hover:bg-sky-700 text-white float-right ${buttonClasses}`}
+          className={`bg-black hover:bg-gray-500 text-white float-right ${buttonClasses}`}
           onClick={() => setShowComments(!showComments)}
         >
           Show Comments
         </button>
         <h3 className=" border-gray-700">Comments</h3>
-        <h4 className="text-gray-700 border-b border-blue-950 mb-4">
+        <h4 className="text-white border-b border-blue-950 mb-4">
           {allcomments.length} comments
         </h4>
         {showComments &&
